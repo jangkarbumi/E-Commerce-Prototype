@@ -1,7 +1,6 @@
-import perfume from '../assets/hmns_farhampton.jpg'
 import { Link } from "react-router-dom";
 
-export default function ItemCard({ itemName, seller, place, price }) {
+export default function ItemCard({ itemName, seller, place, price, itemImg }) {
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -16,7 +15,7 @@ export default function ItemCard({ itemName, seller, place, price }) {
       
       <img
         className="w-full h-64 object-cover"
-        src={perfume}
+        src={itemImg}
         alt={itemName}
       />
 
@@ -29,12 +28,18 @@ export default function ItemCard({ itemName, seller, place, price }) {
 
           <div className="flex items-center space-x-2">
             <button 
-            onClick={handleClick}
+            onClick={(e) => {
+                handleClick(e)
+                addToCart(product)
+            }}
             className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold text-gray-700 hover:bg-gray-100 active:scale-95 transition">
               +
             </button>
             <button
-            onClick={handleClick} 
+            onClick={(e) => {
+                handleClick(e)
+                removeCart(product)
+            }} 
             className="cursor-pointer w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold text-gray-700 hover:bg-gray-100 active:scale-95 transition">
               −
             </button>
