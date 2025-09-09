@@ -1,5 +1,5 @@
 import hmnsIMG from "../assets/hmns_farhampton.jpg"
-import S24Plus from "../assets/S24Plus.jpg"
+import s24plus from "../assets/s24plus.jpg"
 import lymiobaggy from "../assets/lymiobaggy.jpg"
 
 const products = [
@@ -18,7 +18,7 @@ const products = [
         seller: "Samsung Official Store",
         place: "Kota Jakarta",
         priceTag: "Rp. 9.899.000",
-        image: S24Plus
+        image: s24plus
     },
 
     {
@@ -45,7 +45,7 @@ const products = [
         seller: "Samsung Official Store",
         place: "Kota Jakarta",
         priceTag: "Rp. 9.899.000",
-        image: S24Plus
+        image: s24plus
     },
 
     {
