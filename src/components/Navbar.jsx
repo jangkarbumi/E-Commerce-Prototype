@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
+import { useContext } from 'react'; 
+import { ProductContext } from '../context/ProdContext'; 
 
-export default function Navbar({cart}) {
+export default function Navbar() {
+  const { cartitems } = useContext(ProductContext);
+
+  const totalItems = cartitems.reduce((total, item) => total + item.quantity, 0);
+
   return (
     <div className="flex items-center justify-between px-8 py-3 bg-white shadow-xl sticky top-0 z-1">
-      
       <Link to={'/'} className="text-5xl font-bold text-white">
         <span className="text-yellow-500">e</span>
         <span className="text-green-500">p</span>
         <span className="text-blue-500">a</span>
         <span className="text-red-500">y</span>
       </Link>
-
-      
       <div className="flex flex-grow max-w-2xl mx-8">
         <input
           className="flex-grow border border-gray-300 h-10 rounded-l-lg px-4 focus:outline-none"
@@ -35,10 +38,7 @@ export default function Navbar({cart}) {
           </svg>
         </button>
       </div>
-
-     
       <div className="flex items-center space-x-6">
-       
         <Link to="/account">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +55,6 @@ export default function Navbar({cart}) {
             />
           </svg>
         </Link>
-
-     
         <Link to="/checkout" className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,9 +70,8 @@ export default function Navbar({cart}) {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7a1 1 0 00.9 1.5H19m-12 0a1 1 0 11-2 0 1 1 0 012 0zm12 0a1 1 0 11-2 0 1 1 0 012 0z"
             />
           </svg>
-   
           <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">
-            {cart || 0}
+            {totalItems}
           </span>
         </Link>
       </div>
