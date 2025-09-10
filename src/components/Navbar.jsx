@@ -8,9 +8,7 @@ export default function Navbar() {
 
   return (
     <div className="flex items-center justify-between px-4 py-3 bg-white shadow-xl sticky top-0 z-1">
-      {/* Logo dan search bar sekarang berada dalam satu container fleksibel */}
       <div className="flex items-center w-full md:w-auto">
-        {/* Logo akan mengecil di layar kecil */}
         <Link to={'/'} className="text-3xl font-bold">
             <span className="text-yellow-500">e</span>
             <span className="text-green-500">p</span>
@@ -20,31 +18,33 @@ export default function Navbar() {
 
         {/* Search bar dibuat fleksibel dan memiliki margin horizontal di layar besar */}
         <div className="flex-grow mx-4 md:mx-8">
-          <input
-            className="w-full border border-gray-300 h-8 md:h-10 rounded-l-lg px-2 text-sm focus:outline-none"
-            type="text"
-            placeholder="Search..."
-          />
-          <button className="bg-white text-gray-500 px-2 md:px-4 rounded-r-lg border border-gray-300 hover:bg-gray-100 h-8 md:h-10">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 md:h-5 md:w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"
-              />
-            </svg>
-          </button>
+          <div className="flex">
+            <input
+              className="w-full border border-gray-300 h-8 md:h-10 rounded-l-lg px-2 text-sm focus:outline-none"
+              type="text"
+              placeholder="Search..."
+            />
+            {/* Tombol search disembunyikan di layar kecil */}
+            <button className="hidden md:block bg-white text-gray-500 px-2 md:px-4 rounded-r-lg border border-gray-300 hover:bg-gray-100 h-8 md:h-10">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 md:h-5 md:w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Kontainer ikon akun dan keranjang tetap di sisi kanan */}
       <div className="flex items-center space-x-4 md:space-x-6">
         <Link to="/account">
           <svg
