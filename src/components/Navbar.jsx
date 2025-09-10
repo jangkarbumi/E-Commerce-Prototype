@@ -16,7 +16,6 @@ export default function Navbar() {
             <span className="text-red-500">y</span>
         </Link>
 
-        {/* Search bar dibuat fleksibel dan memiliki margin horizontal di layar besar */}
         <div className="flex-grow mx-4 md:mx-8">
           <div className="flex">
             <input
@@ -24,7 +23,6 @@ export default function Navbar() {
               type="text"
               placeholder="Search..."
             />
-            {/* Tombol search disembunyikan di layar kecil */}
             <button className="hidden md:block bg-white text-gray-500 px-2 md:px-4 rounded-r-lg border border-gray-300 hover:bg-gray-100 h-8 md:h-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

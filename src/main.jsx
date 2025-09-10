@@ -5,7 +5,7 @@ import './styles/index.css';
 import { ProductProvider } from './context/ProdContext.jsx';
 
 import HomePage from './pages/HomePage.jsx';
-import Checkout from './pages/Checkout.jsx';
+import NotFoundPage from './pages/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: 'checkout',
-    Component: Checkout
+    path: '*',
+    Component: NotFoundPage
   }
 ]);
 
